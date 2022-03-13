@@ -1,8 +1,8 @@
 package moodAnalyser;
 
 /*
- * TC 1.2 Repeat To pass this Test Case when calling
-          analyseMood method with no params should return Happy
+ * TC 1.2 Given Null Mood Should Return Happy
+          To make this Test Case pass Handl NULL Scenario using try catch and return Happy
  */
 public class MoodAnalyser {
 	private String message;
@@ -24,12 +24,14 @@ public class MoodAnalyser {
 	}
 
 	public String analyseMood() {
-		if (message.toLowerCase().contains("happy") || message.toLowerCase().contains("any")) {
+		try {
+			if (message.toLowerCase().contains("sad")) {
+				return "SAD";
+			} else {
+				return "HAPPY";
+			}
+		} catch (NullPointerException e) {
 			return "HAPPY";
-		} else if (message.toLowerCase().contains("sad")) {
-			return "SAD";
-		} else {
-			return null;
 		}
 	}
 
@@ -42,6 +44,9 @@ public class MoodAnalyser {
 		System.out.println(moodAnalyser.analyseMood());
 
 		moodAnalyser.setMessage("I am Sad");
+		System.out.println(moodAnalyser.analyseMood());
+
+		moodAnalyser.setMessage(null);
 		System.out.println(moodAnalyser.analyseMood());
 	}
 }
