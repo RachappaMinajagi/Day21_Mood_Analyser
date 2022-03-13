@@ -1,22 +1,29 @@
 package moodAnalyser;
 
 /*
- * TC 1.2 Any Mood TestCase Mood Analyser
+ * TC 1.2 Repeat To pass this Test Case when calling
+          analyseMood method with no params should return Happy
  */
 public class MoodAnalyser {
-	public static void main(String args[]) {
-		System.out.println("Mood Analyser");
-		/*
-		 * create object of moodAnalyser
-		 */
-		MoodAnalyser moodAnalyser = new MoodAnalyser();
-		String message = moodAnalyser.analyseMood("I am Happy");
-		System.out.println(message);
-		message = moodAnalyser.analyseMood("I am Sad");
-		System.out.println(message);
+	private String message;
+
+	public MoodAnalyser() {
+		this.message = null;
 	}
 
-	public String analyseMood(String message) {
+	public MoodAnalyser(String message) {
+		this.message = message;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String analyseMood() {
 		if (message.toLowerCase().contains("happy") || message.toLowerCase().contains("any")) {
 			return "HAPPY";
 		} else if (message.toLowerCase().contains("sad")) {
@@ -24,5 +31,17 @@ public class MoodAnalyser {
 		} else {
 			return null;
 		}
+	}
+
+	public static void main(String args[]) {
+		System.out.println("Mood Analyser");
+
+		MoodAnalyser moodAnalyser = new MoodAnalyser();
+
+		moodAnalyser.setMessage("I am Happy");
+		System.out.println(moodAnalyser.analyseMood());
+
+		moodAnalyser.setMessage("I am Sad");
+		System.out.println(moodAnalyser.analyseMood());
 	}
 }
