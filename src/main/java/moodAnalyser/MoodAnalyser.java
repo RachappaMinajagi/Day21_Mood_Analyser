@@ -4,7 +4,7 @@ package moodAnalyser;
  * TC 1.2 Given Null Mood Should Return Happy
           To make this Test Case pass Handl NULL Scenario using try catch and return Happy
  */
-public class MoodAnalyser {
+public class MoodAnalyser {	
 	private String message;
 
 	public MoodAnalyser() {
@@ -27,10 +27,12 @@ public class MoodAnalyser {
 		try {
 			if (message.toLowerCase().contains("sad")) {
 				return "SAD";
-			} else {
+			}
+			else {
 				return "HAPPY";
 			}
-		} catch (NullPointerException e) {
+		}
+		catch (NullPointerException e) {
 			return "HAPPY";
 		}
 	}
@@ -42,7 +44,7 @@ public class MoodAnalyser {
 
 		moodAnalyser.setMessage("I am Happy");
 		System.out.println(moodAnalyser.analyseMood());
-
+		
 		moodAnalyser.setMessage("I am Sad");
 		System.out.println(moodAnalyser.analyseMood());
 

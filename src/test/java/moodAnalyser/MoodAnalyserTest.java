@@ -3,7 +3,8 @@ package moodAnalyser;
 import org.junit.Assert;
 import org.junit.Test;
 
-/*
+
+/**
  * create a class name as MoodAnalyserTest
  */
 
@@ -18,7 +19,7 @@ public class MoodAnalyserTest {
 		String actualResult = moodAnalyser.analyseMood();
 		Assert.assertEquals("SAD", actualResult);
 	}
-
+	
 	@Test
 	public void analyseHappyMood() {
 		MoodAnalyser moodAnalyser = new MoodAnalyser();
@@ -26,7 +27,7 @@ public class MoodAnalyserTest {
 		String actualResult = moodAnalyser.analyseMood();
 		Assert.assertEquals("HAPPY", actualResult);
 	}
-
+	
 	@Test
 	public void analyseNull() {
 		MoodAnalyser moodAnalyser = new MoodAnalyser();
